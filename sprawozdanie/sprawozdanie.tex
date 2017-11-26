@@ -5,6 +5,8 @@
 \usepackage{graphicx}
 \usepackage{url}
 
+\newcommand{\bb}{\textbf}
+
 
 \title{Praca inżynierska}
 \date{2017-10-01}
@@ -24,7 +26,7 @@
 	{\Large\itshape Michał Leś, Jędrzej Kozal\par}
 	\vfill
 	prowadzący\par
-	Dr hab.~Piotr \textsc{Ciskowski}, prof. nadzw. PWr
+	Dr ~Piotr \textsc{Ciskowski}
 
 	\vfill
 
@@ -39,6 +41,40 @@ Neurosterowniki są sposobem zaadresowania w Automatyce kwestii sterowania obiek
 
 \section{Podstawy teoretyczne}
 
+\subsection{Przyjęty model obektu}
+
+Obiekt w automatyce jest traktowany jako czarna skrzynka, która posiada wejścia i wyjścia. Na pobudzenie na wejściu reaguje odpowiedzią na wyjściu. Odpowiedź systemów dynamicznych zależy nie tylko od aktualnej wartości wejścia, ale także statnu obiektu w poprzednich chwilach. Zgodnie z tym można zapisać model nieliniowego obiektu dynamicznego jako:
+
+\begin{equation}
+\left\{	
+\begin{array}{ll}
+	\bb{x}(k+1) &= \phi (\bb{x}(k), \bb{u}(k)) \\
+	\bb{y}(k)   &= \psi (\bb{x}(k))
+\end{array} \right.
+\label{rownanie_stanu}
+\end{equation}
+
+Układ \ref{rownanie_stanu} przedstawia równania stanu. Pierwsze równanie wiąże wewnętrzny stan obiektu z pobudzeniem, a drugie równanie wiąże stan obiektu z wyjściem. System opisywany tymi równaniami jest niezmienny w czasie (angl. time-invariant) - $\phi$ i $\psi$ nie zależą bezpośrednio od czasu. 
+
+Jeśli zastąpimy funkcje nieliniowe przez odpowiednie macierze zyskamy system liniowy:
+
+\begin{equation}
+\left\{	
+\begin{array}{ll}
+	\bb{x}(k+1) &= A\bb{x}(k) + B\bb{u}(k) \\
+	\bb{y}(k)   &= C\bb{x}(k) + D\bb{u}(k)
+\end{array} \right.
+\end{equation}
+
+W rzeczywistych systemach w równaniach oprócz stanu $x$ i pobudzenia $u$ pojawiają się także zakłócenia $z$, które nie będą tutaj rozważane.
+
+Klasa systemów liniowych jest od dawna dobrze znana. Znaleziono wiele sposobów badania i algorytmów sterowania obiektami liniowymi. O wiele trudniejsze w sterowaniu są obiekty nieliniowe. Nawet znając funkcję $\psi$ oraz $x(k)$ samo stworzenie modelu mogącego dokonać identyfikacji takiego obiektu jest trudne, ze względu na kumulujące się z czasem błędy numeryczne, oraz poprzez konieczność poczynienia założeń co do stabilności systemu.
+
+Zadanie identyfikacji sprowadza się do wyznaczeniu modelu reagującego na poubudzenie w sposób zbliżony do reakcji rzeczywistego obietku:
+
+\begin{equation}
+	|| \hat{y} - y || < \epsilon
+\end{equation}
 
 \section{Zrealizowane zadania oraz otrzymane wyniki}
 
