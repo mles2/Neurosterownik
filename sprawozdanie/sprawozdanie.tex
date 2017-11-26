@@ -27,7 +27,7 @@
 	{\Large\itshape Michał Leś, Jędrzej Kozal\par}
 	\vfill
 	prowadzący\par
-	Dr ~Piotr \textsc{Ciskowski}
+	Dr inż. ~Piotr \textsc{Ciskowski}
 
 	\vfill
 
@@ -36,15 +36,15 @@
 \end{titlepage}
 
 \section{Wstęp}
-Podstawowym założeniem projetku jest zaznajomienie się z neurosterownikami, ich zasadami działania oraz przygotowanie modelu predykcyjnego prostego obiektu dynamicznego. Dodatkowo przyjęto że bardziej interesujące będzie przyjęcie jakiegoś rzeczywistego obiektu niż badanie reakcji na teoretyczne charakterystyki jakie mogą posiadać obiekty.
+Podstawowym założeniem projetku jest zaznajomienie się z neurosterownikami, ich zasadami działania oraz przygotowanie modelu predykcyjnego prostego obiektu dynamicznego. Dodatkowo przyjęto że bardziej interesujące będzie przyjęcie jakiegoś rzeczywistego obiektu niż badanie reakcji bardziej teoretycznego modelu o przyjętych charakterystych.
 
-Neurosterowniki są sposobem zaadresowania w Automatyce kwestii sterowania obiektami mocno nieliniowymi, z którymi tradycyjne metody sterowania jak sterowniki PID nie dają sobie rady. U podstaw działania neurosterowników leży idea działania sieci neuronowej, które ostatnio zdominowały pole uczenia maszynowego. Są one wykorzystywane w wielu dziedzianach nauki i techniki do rozpoznawania obrazów (computer vision), klasyfikacji, sterownia ruchem ulicznym, wspomagania użytkowników różnych aplikacji (jak np. podpowiadanie słów w trakcie pisania na smarphonie), czy nawet eksperymenty społeczne. W nimniejszej pracy postawiono zbadać w jaki sposób szerokie możliwości oferowane przez sieci neuronowe mogą być wykorzystane w automatyce.
+Neurosterowniki są sposobem zaadresowania w Automatyce kwestii sterowania obiektami mocno nieliniowymi, z którymi tradycyjne metody sterowania jak sterowniki PID nie dają sobie rady. U podstaw działania neurosterowników leży idea działania sieci neuronowej, które ostatnio zdominowały pole uczenia maszynowego. Są one wykorzystywane w wielu dziedzianach nauki i techniki do rozpoznawania obrazów (computer vision), klasyfikacji, sterownia ruchem ulicznym, wspomagania użytkowników różnych aplikacji (jak np. podpowiadanie słów w trakcie pisania na smarphonie), czy nawet prowadzenie eksperymentów społecznych. W nimniejszej pracy postawiono zbadać w jaki sposób szerokie możliwości oferowane przez sieci neuronowe mogą być wykorzystane w automatyce.
 
 \section{Podstawy teoretyczne}
 
 \subsection{Przyjęty model obektu}
 
-Obiekt w automatyce jest traktowany jako czarna skrzynka, która posiada wejścia i wyjścia. Na pobudzenie na wejściu reaguje odpowiedzią na wyjściu. Odpowiedź systemów dynamicznych zależy nie tylko od aktualnej wartości wejścia, ale także statnu obiektu w poprzednich chwilach. Zgodnie z tym można zapisać model nieliniowego obiektu dynamicznego jako:
+Obiekt w automatyce jest traktowany jako czarna skrzynka, która posiada wejścia i wyjścia. Na pobudzenie na wejściu reaguje odpowiedzią na wyjściu. Odpowiedź systemów dynamicznych zależy nie tylko od aktualnej wartości wejścia, ale także statnu obiektu w poprzednich chwilach. Zgodnie z tym można zapisać model nieliniowego dyskretnego obiektu dynamicznego jako:
 
 \begin{equation}
 \left\{
@@ -67,7 +67,7 @@ Jeśli zastąpimy funkcje nieliniowe przez odpowiednie macierze zyskamy system l
 \end{array} \right.
 \end{equation}
 
-W rzeczywistych systemach w równaniach oprócz stanu $x$ i pobudzenia $u$ pojawiają się także zakłócenia $z$, które nie będą tutaj rozważane.
+W rzeczywistych systemach w równaniach oprócz stanu $\bb{x}$ i pobudzenia $\bb{u}$ pojawiają się także zakłócenia $\bb{z}$, które nie będą tutaj rozważane.
 
 Klasa systemów liniowych jest od dawna dobrze znana. Znaleziono wiele sposobów badania i algorytmów sterowania obiektami liniowymi. O wiele trudniejsze w sterowaniu są obiekty nieliniowe. Nawet znając funkcję $\psi$ oraz $x(k)$ samo stworzenie modelu mogącego dokonać identyfikacji takiego obiektu jest trudne, ze względu na kumulujące się z czasem błędy numeryczne, oraz poprzez konieczność poczynienia założeń co do stabilności systemu.
 
@@ -108,7 +108,7 @@ Często do takiego zadania są wykorzystywane sieci neuronowe przedstawione na r
 	\label{fig:identyfikacja2}
 \end{figure}
 
-W trakcie identyfikacji sieć neuronowa jest zwykle włączana sposób szeregowo-równoległy, co zostało zilustrowane na rys \ref{fig:identyfikacja2}. Taka konfiguracja umożliwia badanie błędu i minializację błędu zgodnie z nierównością \ref{warunek}. Sieć neuronowa nieustanie próbuje przewidzieć wyjście obiektu w następnej chwili. Różnica $e(k)$ jest wykorzystywana w procesie uczenia sieci. W \cite{Osowski} zaproponowano taką metodę oraz zaprezentowano wykorzystanie modelu do predykcji wyjścia filtru Butterwortha szóstego rzędu dla pobudzenia sygnałem trójkątnym oraz tłumionym sygnałem sinusoidalnym.
+W trakcie identyfikacji sieć neuronowa jest zwykle włączana sposób szeregowo-równoległy, co zostało zilustrowane na rys \ref{fig:identyfikacja2}. Taka konfiguracja umożliwia badanie błędu i minializację błędu zgodnie z nierównością \ref{warunek}. Sieć neuronowa nieustanie próbuje przewidzieć wyjście obiektu w następnej chwili. Różnica $e(k)$ jest wykorzystywana w procesie uczenia sieci. W \cite{Osowski} zaproponwano taką metodę oraz zaprezentowano wykorzystanie modelu do predykcji wyjścia filtru Butterwortha szóstego rzędu dla pobudzenia sygnałem trójkątnym oraz tłumionym sygnałem sinusoidalnym.
 
 \section{Zrealizowane zadania oraz otrzymane wyniki}
 Zadanie predykcji może zostać zrealizowane za pomocą modelowania liniowego ARX -
@@ -165,7 +165,7 @@ Strona prowadzącego,
 \bibitem{springer}
 J. Rhim, S. W. Lee
 \textit{A neural network approach for damage detection and identification of structures}
-Springer-Verlag 1995
+Computational Mechanics, Springer 1995
 
 \bibitem{springer}
 Jerzy Lipski

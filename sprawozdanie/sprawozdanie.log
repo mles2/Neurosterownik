@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.16)  26 NOV 2017 23:05
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.16)  26 NOV 2017 23:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -573,11 +573,11 @@ Overfull \hbox (4.83275pt too wide) in paragraph at lines 111--112
  []
 
 [3 <./ident2.jpg>] [4]
-LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 160.
+LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 163.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/polski/ot4cmtt.fd
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-Overfull \hbox (27.55247pt too wide) in paragraph at lines 159--161
+Overfull \hbox (27.55247pt too wide) in paragraph at lines 162--164
 \OT4/cmtt/m/n/10 http://staff.iiar.pwr.wroc.pl/piotr.ciskowski/skrypt/SNwMATLABie.htm 
  []
 
@@ -593,10 +593,10 @@ Here is how much of TeX's memory you used:
  6239 multiletter control sequences out of 15000+600000
  14735 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,9n,25p,786b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,9n,25p,802b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plme.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plsc.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plr12.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/pltt10.pfb>
-Output written on sprawozdanie.pdf (6 pages, 166247 bytes).
+Output written on sprawozdanie.pdf (6 pages, 165993 bytes).
 PDF statistics:
  87 PDF objects out of 1000 (max. 8388607)
  61 compressed objects within 1 object stream
