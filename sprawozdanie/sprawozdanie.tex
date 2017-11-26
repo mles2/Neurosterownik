@@ -4,6 +4,7 @@
 \usepackage[utf8]{inputenc}
 \usepackage{graphicx}
 \usepackage{url}
+\usepackage{amsmath}
 
 \newcommand{\bb}{\textbf}
 
@@ -46,7 +47,7 @@ Neurosterowniki są sposobem zaadresowania w Automatyce kwestii sterowania obiek
 Obiekt w automatyce jest traktowany jako czarna skrzynka, która posiada wejścia i wyjścia. Na pobudzenie na wejściu reaguje odpowiedzią na wyjściu. Odpowiedź systemów dynamicznych zależy nie tylko od aktualnej wartości wejścia, ale także statnu obiektu w poprzednich chwilach. Zgodnie z tym można zapisać model nieliniowego obiektu dynamicznego jako:
 
 \begin{equation}
-\left\{	
+\left\{
 \begin{array}{ll}
 	\bb{x}(k+1) &= \phi (\bb{x}(k), \bb{u}(k)) \\
 	\bb{y}(k)   &= \psi (\bb{x}(k))
@@ -54,12 +55,12 @@ Obiekt w automatyce jest traktowany jako czarna skrzynka, która posiada wejści
 \label{rownanie_stanu}
 \end{equation}
 
-Układ \ref{rownanie_stanu} przedstawia równania stanu. Pierwsze równanie wiąże wewnętrzny stan obiektu z pobudzeniem, a drugie równanie wiąże stan obiektu z wyjściem. System opisywany tymi równaniami jest niezmienny w czasie (angl. time-invariant) - $\phi$ i $\psi$ nie zależą bezpośrednio od czasu. 
+Układ \ref{rownanie_stanu} przedstawia równania stanu. Pierwsze równanie wiąże wewnętrzny stan obiektu z pobudzeniem, a drugie równanie wiąże stan obiektu z wyjściem. System opisywany tymi równaniami jest niezmienny w czasie (angl. time-invariant) - $\phi$ i $\psi$ nie zależą bezpośrednio od czasu.
 
 Jeśli zastąpimy funkcje nieliniowe przez odpowiednie macierze zyskamy system liniowy:
 
 \begin{equation}
-\left\{	
+\left\{
 \begin{array}{ll}
 	\bb{x}(k+1) &= A\bb{x}(k) + B\bb{u}(k) \\
 	\bb{y}(k)   &= C\bb{x}(k) + D\bb{u}(k)
@@ -110,11 +111,44 @@ Często do takiego zadania są wykorzystywane sieci neuronowe przedstawione na r
 W trakcie identyfikacji sieć neuronowa jest zwykle włączana sposób szeregowo-równoległy, co zostało zilustrowane na rys \ref{fig:identyfikacja2}. Taka konfiguracja umożliwia badanie błędu i minializację błędu zgodnie z nierównością \ref{warunek}. Sieć neuronowa nieustanie próbuje przewidzieć wyjście obiektu w następnej chwili. Różnica $e(k)$ jest wykorzystywana w procesie uczenia sieci. W \cite{Osowski} zaproponowano taką metodę oraz zaprezentowano wykorzystanie modelu do predykcji wyjścia filtru Butterwortha szóstego rzędu dla pobudzenia sygnałem trójkątnym oraz tłumionym sygnałem sinusoidalnym.
 
 \section{Zrealizowane zadania oraz otrzymane wyniki}
+Zadanie predykcji może zostać zrealizowane za pomocą modelowania liniowego ARX -
+modelu auteregresywnego z zewnętrznym wejściem. Jeżeli do modelowania zostały
+użyte sieci neuronowe model taki nazywa się NNARX (Neural Networ ARX).
 
+Na podstawie danych zawartych w pliku 'actuator.m' żądany model został załadowany
+do środowiska programu Matlab. Wejściem obiektu (u) jest
+otwarcie zaworu, zaś odpowiedzią systemu(y) jest ciśnienie oleju.
+Pierwszym elementem potrzebnym do wykonania zadania była konstrukcja prawidłowego ciągu uczącego.
+W modelu ARX potrzebujemy stworzyć układ z opóźnionymi wejściami i odpowiedziami.
+W zależności od potrzeb modelu, możemy dostosować wielkość opóźnienia i ilość opóźnionych próbek.
+W naszym przypadku skonstruowana została następującą macierz wejściowa dla sieci:
+\begin{equation}
+	u_s= \begin{bmatrix} 0 & 0 & 0 & 0 \\ 0 & u' & 0 & 0 \\ 0 & 0 & u' & 0 \\ 0 & p' & 0 & 0 \\ 0 & 0 & p' &  0 \\ 0 & 0 & 0 & p' \end{bmatrix}
+\end{equation}
+gdzie u' i y' odpowiadają transponowanym wektorom otrzymanym z modelu.
+Analogicznie skonstruowany został wektor pożądanych wyjść dla sieci:
+\begin{equation}
+	y_s= \begin{bmatrix} p' & 0 & 0 & 0  \end{bmatrix}'
+\end{equation}
+
+
+Dane zostały pogrupowane na zbiór uczący (pierwsze 512 próbek), oraz
+zbiór sprawdzający(kolejne 512 próbek).
 
 \section{Wnioski}
-
-
+Nieliniowe procesy są zwykle za bardzo skomplikowane dla modelowania tradycyjnymi
+metodami statystycznymi. Modelowanie za pomocą nowoczesnych metod opierających
+się o uczenie maszynowe czy sieci neuronowe pozwala na przybliżenie konkretnych
+właściwości badanego układu. Nie pozwala jednak na pełną predykcję zachowań układu.
+Należy zwrócić uwagę, że do właściwej identyfikacji systemu niezbędna jest duża
+liczba danych i głębsza ich analiza. Sieć będzie się zachowywać tylko tak, jak
+ją tego nauczymy i tylko na podstawie informacji, które zawarte były w danych
+uczących.
+W sprawozdaniu zostały opisane najprostsze scenariusze dotyczące działania
+i modelowania rzeczywistych obiektów.
+Neurosterowniki i sieci NNARX nie są popularnie używanymi strukturami do
+predykcji i identyfikacji układów. Wynika to ze skomplikowanego aparatu matematycznego
+i obecności na rynku znacznie dokładniejszych narzędzi.
 
 \newpage
 \begin{thebibliography}{9}
@@ -124,12 +158,12 @@ Stanisław Osowski.
 \textit{Sieci Neuronowe w ujęciu algorytmicznym}
 Wydawnictwo Naukowo-Techniczne, Warszawa 1996
 
-\bibitem{strona} 
+\bibitem{strona}
 Strona prowadzącego,
 \\\texttt{http://staff.iiar.pwr.wroc.pl/piotr.ciskowski/skrypt/SNwMATLABie.htm}
 
 \bibitem{springer}
-J. Rhim, S. W. Lee 
+J. Rhim, S. W. Lee
 \textit{A neural network approach for damage detection and identification of structures}
 Springer-Verlag 1995
 
