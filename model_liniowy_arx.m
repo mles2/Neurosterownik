@@ -1,5 +1,17 @@
 clear all;
+close all;
 load actuator.mat;
+
+figure
+subplot(211)
+plot(u) % pobudzenie
+title('pobudzenie (otwarcie zaworu)')
+xlabel('numer próbki')
+
+subplot(212)
+plot(p) % odpowiedź 
+title('odpowiedz (cisnienie oleju)')
+xlabel('numer próbki')
 
 %definicje wejść i wyjść docelowej sieci
 wejscie_sieci = [ 0  u' 0  0 ;
@@ -31,9 +43,8 @@ TuczPrzyrostowe = num2cell(wyjscie_sieci(1 : 511, : )' , 1);
 PsprPrzyrostowe = num2cell(wejscie_sieci(512 : 1021, :)',1);
 TsprPrzyrostowe = num2cell(wyjscie_sieci(512 : 1021, :)',1);
 
-%ucz wsadowo:
+% %ucz wsadowo:
 siecARXprzed = newlin ( PuczWsadowe , TuczWsadowe ) ;
-
 disp('Uczę sieć ARX - wsadowo...')
 disp(' ')
 siecARXpo = train (siecARXprzed, PuczWsadowe, TuczWsadowe);
@@ -41,7 +52,7 @@ siecARXpo = train (siecARXprzed, PuczWsadowe, TuczWsadowe);
 %ucz przyrostowo:
 siecARX = siecARXprzed;
 siecARX.adaptParam.passes = 511 ;
-liczba_epok = 10;
+liczba_epok = 50;
 bladMSE = zeros(1,liczba_epok);
 
 disp('Uczę sieć - przyrostowo...')
@@ -89,7 +100,7 @@ disp('')
 disp('Symuluję siećARX na zbiorze sprawdzającym...')
 disp('')
 ySimARX = zeros(1,510);
-for i = 4:510 ,
+for i = 4:510
     xSim = [PsprWsadowe(1:2, i); ...
         ySimARX(1,i-1); ...
         ySimARX(1,i-2); ...

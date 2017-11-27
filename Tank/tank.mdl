@@ -1,0 +1,342 @@
+Model {
+  Name			  "tank"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "200.0"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-5"
+  AbsTol		  "auto"
+  Refine		  "1"
+  MaxStep		  "auto"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  on
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  on
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Wed Oct 20 08:38:46 1999"
+  Creator		  "pmn"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "pmn"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Wed Oct 20 15:04:03 1999"
+  ModelVersionFormat	  "1.%<AutoIncrement:9>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "tank"
+    Location		    [99, 501, 628, 761]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Inport
+      Name		      "Inlet flow"
+      Position		      [45, 43, 75, 57]
+      Port		      "1"
+      PortWidth		      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      SignalType	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Math
+      Name		      "1/h^2"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [235, 100, 265, 130]
+      Orientation	      "left"
+      Operator		      "reciprocal"
+      OutputSignalType	      "auto"
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain1"
+      Position		      [175, 100, 205, 130]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      Gain		      "conegain"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "Gain2"
+      Position		      [230, 180, 260, 210]
+      Orientation	      "left"
+      NamePlacement	      "alternate"
+      Gain		      "kout"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [310, 45, 340, 75]
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "starth"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+    }
+    Block {
+      BlockType		      Math
+      Name		      "Math\nFunction1"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [290, 179, 320, 211]
+      Orientation	      "left"
+      Operator		      "sqrt"
+      OutputSignalType	      "auto"
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [245, 42, 275, 73]
+      Inputs		      "2"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Saturate
+      Name		      "Saturation"
+      Position		      [370, 45, 400, 75]
+      UpperLimit	      "0.5"
+      LowerLimit	      "1e-3"
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      Ports		      [2, 1, 0, 0, 0]
+      Position		      [135, 40, 155, 60]
+      ShowName		      off
+      IconShape		      "round"
+      Inputs		      "|+-"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Math
+      Name		      "h^2"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [305, 100, 335, 130]
+      Orientation	      "left"
+      Operator		      "square"
+      OutputSignalType	      "auto"
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "height"
+      Position		      [485, 53, 515, 67]
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Line {
+      SrcBlock		      "Gain2"
+      SrcPort		      1
+      Points		      [-80, 0]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Math\nFunction1"
+      SrcPort		      1
+      DstBlock		      "Gain2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Product"
+      SrcPort		      1
+      DstBlock		      "Integrator"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Gain1"
+      SrcPort		      1
+      Points		      [-10, 0; 0, -50]
+      DstBlock		      "Product"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "h^2"
+      SrcPort		      1
+      DstBlock		      "1/h^2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "1/h^2"
+      SrcPort		      1
+      DstBlock		      "Gain1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Product"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Integrator"
+      SrcPort		      1
+      DstBlock		      "Saturation"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Saturation"
+      SrcPort		      1
+      Points		      [25, 0]
+      Branch {
+	DstBlock		"height"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, 55]
+	Branch {
+	  Points		  [0, 80]
+	  DstBlock		  "Math\nFunction1"
+	  DstPort		  1
+	}
+	Branch {
+	  DstBlock		  "h^2"
+	  DstPort		  1
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Inlet flow"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Annotation {
+      Position		      [429, 41]
+      Text		      "h"
+    }
+    Annotation {
+      Position		      [287, 39]
+      Text		      "h"
+    }
+    Annotation {
+      Position		      [287, 28]
+      Text		      "."
+    }
+    Annotation {
+      Position		      [95, 38]
+      Text		      "Q_in"
+    }
+    Annotation {
+      Position		      [185, 181]
+      Text		      "Outlet flow"
+    }
+  }
+}

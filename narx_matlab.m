@@ -1,9 +1,8 @@
+
 load actuator.mat
 p = p';
 u = u';
-
-daneUczace = figure;
-
+figure
 subplot(211), plot(u), ylabel('u'); title('input: valve opening');
 subplot(212), plot(p), ylabel('p'); title('output: oil pressure');
 xlabel('time')
@@ -19,8 +18,8 @@ uUcz = con2seq(u(1,1:512));
 pSpr = con2seq(p(1,513:1024));
 uSpr = con2seq(u(1,513:1024));
 
-uDelays = [1 2 ]; % opóźnienia wejścia (pobudzenie)
-pDelays = [1 2 3]; %opóźnienia wyjścia (odpowiedź)
+uDelays = [1 2 3]; % opóźnienia wejścia (pobudzenie)
+pDelays = [1 2 3 4]; %opóźnienia wyjścia (odpowiedź)
 
 liczbaNeuronow = input ('Podaj liczbę neuronów w warstwie ukrytej sieci: ');
 siecNARXprzed = narxnet(uDelays,pDelays, liczbaNeuronow)
@@ -35,10 +34,11 @@ siecNARXprzed.trainParam.min_grad = 1e-10;
 %naucz sieć
 siecNARXpo = train(siecNARXprzed, PsekwencjaUcz, tUcz, PiUcz);
 
+figure
 %sprawdzenie sieci:
 yUczNARX = sim ( siecNARXpo , PsekwencjaUcz , PiUcz ) ; % na zbiorze uczącym
 ySprNARX = sim ( siecNARXpo , PsekwencjaSpr , PiSpr ) ; % na zbiorze sprawdzającym
-view(siecNARXpo);
+%view(siecNARXpo);
 
 odpSieciNARXoneStep = figure ;
 subplot ( 2,1,1 ), plot ( cell2mat(yUczNARX) , 'b' ), hold on
@@ -51,7 +51,7 @@ title ( 'NARX - One-step ahead prediction - validating data' )
 
 % zamknięcie w pętli sprzężenia:
 siecNARXpoClosed = closeloop(siecNARXpo);
-view(siecNARXpoClosed);
+%view(siecNARXpoClosed);
 
 %przygotowanie danych do symulacji:
 [ PsekwencjaUcz, PiUcz, AiUcz, tUcz ] = preparets ( siecNARXpoClosed, uUcz, { } , pUcz ) ;
@@ -60,7 +60,7 @@ view(siecNARXpoClosed);
 yUczNARXclosed = sim ( siecNARXpoClosed, PsekwencjaUcz, PiUcz ) ; % na uczącym
 ySprNARXclosed = sim ( siecNARXpoClosed, PsekwencjaSpr, PiSpr ) ; % na sprawdzającym
 %wyniki symulacji:
-odpSieciNARXmultiStep = figure ;
+figure ;
 % na uczącym:
 subplot ( 2,1,1 ), plot ( cell2mat(yUczNARXclosed) , 'b' ), hold on
 plot ( cell2mat(tUcz ) , 'r' )

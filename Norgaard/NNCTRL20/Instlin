@@ -1,0 +1,85 @@
+          ---------------------------------------------------------------
+                      
+          OVERVIEW OF FILES ASSOCIATED WITH SIMULATION OF CONTROL SYSTEMS
+                   BASED ON INSTANTANEOUS LINEARIZATION
+                   
+          ---------------------------------------------------------------
+                    
+MATLAB functions for simulating control systems based on the instantanous
+linearization technique. The following designs have been implemented:
+o Approximate pole placement with all zeros canceled.
+o Approximate pole placement without zero cancellation.
+o Approximate MV1 (simple extension to minimum variance control).
+o Approximate Generalized Predictive Control.
+
+
+                                 --OO--
+                                  
+
+DESCRIPTION                             
+Assume that the process to be controlled has been modelled by a NNARX model:
+     ^          ^
+     y(t|t-1) = g(y(t-1),...,y(t-n),u(t-1),...,u(t-m))
+
+If the network architecture definition and the weights have been saved in a
+mat-file these tools can be used for simulating control systems based on a
+linearization of the process model derived at each sampling instant. The
+"process" can be a SIMULINK model or a model described by a set of differential
+equations specified in a MATLAB-function. If the training data has been
+obtained from a "real world" experiment (i.e., a MATLAB/SIMULINK model is not
+available) model is not available the closed-loop system can also be
+simulated by using the network model for simulating the process.
+
+The NNARX model can be generated with the functions available in the
+NNSYSID toolbox.
+
+
+                                --OO--
+                                
+                                                                  
+
+FILE OVERVIEW
+Instlin  - This file
+lincon   - Program for simulating approximate pole placement and minimum
+           variance controllers.
+lininit  - File containing design parameters for 'lincon'.
+apccon   - Program for simulating approximate generalized predictive control.
+apcinit  - File containing the design parameters for 'apccon'.
+diophant - Function for solving Diophantine equations.
+dio      - Interface to 'diophant' that is used in 'lincon'.
+lintest  - A program for demonstrating lincon.
+predtest - A program for demonstrating apccon.
+
+
+The following functions must be available as well:
+NNSYSID toolbox
+shift, siggener                    - Functions used by lincon
+smout, springm, spm1               - Files used for demonstration
+
+
+                                --OO--
+                                 
+                                 
+SUGGESTED WORKING PROCEDURE FOR TESTING THE CONCEPT ON A KNOWN PROCESS
+
+1: BUILD THE PROCESS
+Build the process in SIMULINK or write the differential equations in a
+MATLAB-function. If SIMULINK is used, specify input to and output from the
+model by an inport and an outport, respectively. If SIMULINK is not available, 
+write the differential equations in a MATLAB-function in the format required
+by the ODE45 differential equation solver.
+
+2: MAKE AN EXPERIMENT
+Use the function 'experim' for generating a data set to be used
+for inferring a neural network model of the process.
+
+3. IDENTIFY A MODEL OF THE PROCESS
+Identify a neural network model with the 'nnarx' function in the NNSYSID
+toolbox. 
+
+4: SIMULATION OF CLOSED-LOOP SYSTEM
+The closed-loop system is simulated using 'lincon' or 'apccon'. The design
+parameters necessary for running these programs must be defined in 'lininit'
+or 'apcinit', respectively. For example, the user must specify the name
+of the MATLAB/SIMULINK model, controller design, sampling period, reference
+signal and name of file containing architecture and weights of NNARX model

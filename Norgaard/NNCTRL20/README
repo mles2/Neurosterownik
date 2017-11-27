@@ -1,0 +1,75 @@
+                                --OO--
+                      
+                           Magnus Norgaard's
+                       
+          NEURAL NETWORK BASED CONTROL SYSTEM DESIGN TOOLKIT
+                               (NNCTRL)
+                                
+                               Version 2
+                         
+                       Department of Automation
+                           Building 326
+                         2800 Lyngby, Denmark
+                        
+                   Technical University of Denmark
+
+                                --OO--
+
+
+This collection of Matlab(r) files can be used for design and simulation of
+control systems based on multi-layer perceptron type neural networks. Tools
+are provided for:
+
+o Direct inverse control.
+o Control based on instantaneous linearization.
+o Optimal control.
+o Control by feedback linearization.
+o Nonlinear generalized predictive control.
+o Internal model control.
+o Feedforward control.
+
+A number of simple demonstration programs have been implemented to illustrate
+most of the concepts. Run these to get an idea about what the toolkit has to
+offer. Be careful with the demos, however. Due to problems with local
+minima the results can vary quite a lot between to runs of the same demo.
+
+In the current directory you should be able to find a brief manual in
+postscript format. Start by printing out this and study the release notes
+carefully. The release notes have also been witten in a file in this
+directory ("RELEASE").
+
+The different functions do not contain "on-line" help regading their use.
+Instead you should study the text files 'Fblin', 'Feedforw', 'Imc', 'Instlin',
+'Inverse', 'Npc', 'Optim' for an on-line explanation of the different
+concepts.
+
+The functions have not been thoroughly tested and thus you are likely 
+to encounter bugs every once in a while. However, I hope I have managed
+to eliminate most of the bugs.
+
+Enjoy!
+- MN
+
+
+
+                                --OO--
+                                
+
+Read the file "Contents.m" for a complete overview of the toolkit.
+
+                             
+DEMONSTRATION PROGRAMS:
+In order to run the demos you must go to the directory "CTRLDEMO" (and this
+directory must NOT be write protected!).
+
+!!Notice that you may have to resize the GUI window with the mouse if you
+are unable to read all the text because the font size is too large compared to the
+window size!!
+
+invtest  : Demonstration of direct inverse control.
+fbltest  : Demonstration of feedback linearization.
+lintest  : Demonstration of instantaneous linearization based control.
+opttest  : Demonstration of optimal control.
+predtest : Demonstration of predictive control.
+ffcon    : A preliminary demonstration of PID + Feedforward control.
+imccon   : A preliminary demonstration of internal model control.

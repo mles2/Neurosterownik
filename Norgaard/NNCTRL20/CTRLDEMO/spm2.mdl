@@ -1,0 +1,342 @@
+Model {
+  Name			  "spm2"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "999999"
+  SolverMode		  "SingleTasking"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-6"
+  Refine		  "1"
+  MaxStep		  "10"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Mon Jan 24 22:02:15 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jan 24 22:02:33 2000"
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "spm2"
+    Location		    [524, 104, 976, 283]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "yellow"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Inport
+      Name		      "Inport"
+      Position		      [45, 85, 65, 105]
+      BackgroundColor	      "blue"
+      Port		      "1"
+      PortWidth		      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      SignalType	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "DEE"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [130, 79, 295, 111]
+      BackgroundColor	      "green"
+      DropShadow	      on
+      OpenFcn		      "diffeqed"
+      ShowPortLabels	      off
+      MaskType		      "Differential Equation Editor (DEE)"
+      MaskDisplay	      "disp('Spring-mass-damper\\nsystem')"
+      MaskIconFrame	      on
+      MaskIconOpaque	      on
+      MaskIconRotate	      "none"
+      MaskIconUnits	      "autoscale"
+      System {
+	Name			"DEE"
+	Location		[100, 100, 600, 400]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"green"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "SysInport1"
+	  Position		  [20, 50, 40, 70]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integ1"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [400, 50, 430, 70]
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Integ2"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [400, 100, 430, 120]
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "SysMux"
+	  Ports			  [3, 1, 0, 0, 0]
+	  Position		  [100, 199, 150, 251]
+	  Inputs		  "3"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "x1"
+	  Position		  [300, 50, 330, 70]
+	  Expr			  "u(3)                          "
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "x2"
+	  Position		  [300, 100, 330, 120]
+	  Expr			  "-u(3)-u(2)-u(2)*u(2)*u(2)+u(1)"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "y1"
+	  Position		  [300, 250, 330, 270]
+	  Expr			  "u(2)"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "Port1"
+	  Position		  [400, 250, 420, 270]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "y1"
+	  SrcPort		  1
+	  DstBlock		  "Port1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Integ2"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 35; -375, 0; 0, 95]
+	  DstBlock		  "SysMux"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "x2"
+	  SrcPort		  1
+	  DstBlock		  "Integ2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SysMux"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    Points		    [65, 0; 0, 35]
+	    DstBlock		    "y1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [65, 0; 0, -115]
+	    DstBlock		    "x2"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [65, 0; 0, -165]
+	    DstBlock		    "x1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Integ1"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, 80; -370, 0; 0, 85]
+	  DstBlock		  "SysMux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "x1"
+	  SrcPort		  1
+	  DstBlock		  "Integ1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "SysInport1"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, 150]
+	  DstBlock		  "SysMux"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "Outport"
+      Position		      [360, 85, 380, 105]
+      BackgroundColor	      "blue"
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Line {
+      SrcBlock		      "Inport"
+      SrcPort		      1
+      DstBlock		      "DEE"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "DEE"
+      SrcPort		      1
+      DstBlock		      "Outport"
+      DstPort		      1
+    }
+    Annotation {
+      Position		      [217, 41]
+      VerticalAlignment	      "top"
+      BackgroundColor	      "yellow"
+      Text		      "Spring-mass-damper with a stiffening spring"
+    }
+  }
+}

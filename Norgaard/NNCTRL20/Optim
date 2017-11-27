@@ -1,0 +1,113 @@
+                   -----------------------------------------------
+                      
+                   OVERVIEW OF FILES ASSOCIATED WITH SIMULATION OF
+                      NEURAL NETWORK BASED OPTIMAL CONTROL
+                   
+                   -----------------------------------------------
+                    
+MATLAB tools for training a neural network to act as an optimal controller
+and for simulating the closed-loop system with the trained controller network
+in the loop.
+
+
+                                  -OO-
+
+
+DESCRIPTION
+Assuming the system to be controlled can be described by
+     ^      ^
+     y(t) = f[y(t-1),...,y(t-n),u(t-1),...,u(t-m)]
+
+then the present files train a neural network controller, g: 
+
+     u(t) = g[r(t+1),y(t),...,y(t-n+1),u(t-1),...,u(t-m+1)]
+ 
+to minimize the criterion (theta is a vector containing the weights)
+
+                                              
+                  ---                  2                     2
+      J(theta) =  >   [ (r(t+1)-y(t+1))   +  rho*(u(t|theta))  ]
+                  ---                               
+                   t                            
+
+The network is trained with a recursive Gauss-Newton method. This
+method is derived for least squares problems but has here been modified
+here simply by adding an additional term to the gradient compared to the
+implementation of specialized training in 'special2'. The covariance matrix
+update is unchanged but that doesn't seem to of be a problem -- the algorithm
+still converges quite rapidly. Three different methods for updating the
+covariance matrix (the inverse Hessian) have been implemented: exponential
+forgetting, constant trace, and the exponential forgetting and resetting
+algorithm (EFRA).
+
+The criterion differs from the one considered in "specialized" training of
+inverse models in that the squared control actions are penalized by
+introduction of an additional term in the criterion. If rho=0 the training
+procedure will obviously perform exactly as 'special2' and the controller
+simply becomes the inverse model.
+
+The process to be controlled can be a SIMULINK model or a model described by a
+set of differential equations specified in a MATLAB-function. If the training
+data is obtained through a "real world" experiment (i.e., a MATLAB/SIMULINK
+model is not available), the closed-loop system can also be simulated assuming
+that the network model is a perfect description of the system to be controlled.
+
+
+                                 -OO-
+          
+                                 
+FILE OVERVIEW:
+Optim    - This file.
+opttrain - Train a network as a "detuned" inverse model using
+           indirect/specialized training. The network is trained with a
+           recursive Gauss-Newton method.
+optrinit - File containing initializations for 'opttrain'.
+optcon   - Program for simulating the closed-loop system.
+optinit  - File containing the design parameters for 'optcon'.
+opttest  - A test example.
+
+
+The following functions must be available as well:
+NNSYSID toolbox        - Neural Network Based System Identification
+shift, siggener        - Functions used by opttrain and optcon
+general, invsim
+smout, springm, spm1   - Files used for demonstration
+
+
+                                 -OO-
+                                 
+                                 
+SUGGESTED WORKING PROCEDURE FOR TESTING THE CONCEPT ON A KNOWN PROCESS
+
+1: BUILD THE PROCESS
+Build the process in SIMULINK or write the differential equations in a
+MATLAB-function. If SIMULINK is used, specify input to and output from the
+model by an inport and an outport, respectively. If SIMULINK is not available, 
+write the differential equations in a MATLAB-function in the format required
+by the ODE45 differential equation solver.
+
+2: MAKE AN EXPERIMENT
+Use the function 'experim' to generate a data set to be used
+for inferring a neural network model of the process.
+
+3. BUILD A MODEL OF THE PROCESS
+Identify a "forward" model of the process with the 'nnarx' function and
+evaluate the obtained network with 'nnvalid'. This network is used for providing
+estimates of the Jacobian of the process which is required for training the
+controller network.
+
+4: TRAIN THE CONTROLLER NETWORK
+'opttrain' is responsible for training the controller network. The user
+specifications necessary for running this function must be written in the file
+'optrinit'. One of the things that the user must specify in this file is an
+initial controller network. This can for example be an inverse model trained
+with 'general'. This will in most cases be more safe than just initializing
+the weights at random and in addition it will often result in a more rapid
+convergence.  
+
+5: SIMULATION OF THE CLOSED-LOOP SYSTEM
+The closed-loop system is simulated with the function 'optcon'. The design
+parameters necessary for running this program must be defined in the file
+'optinit'. For example, the user must specify the name of the
+MATLAB/SIMULINK model, sampling period,, reference signal, and the name of the
+file containing architecture and weights of the controller network. 

@@ -1,0 +1,2111 @@
+Model {
+  Name			  "pservop1"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "999999"
+  SolverMode		  "Auto"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-3"
+  Refine		  "1"
+  MaxStep		  "10"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  on
+  StatusBar		  on
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Fri Nov  5 14:35:00 1999"
+  Creator		  "pmn"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  LastModifiedBy	  "pmn"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Fri Nov  5 15:52:39 1999"
+  ModelVersionFormat	  "1.%<AutoIncrement:4>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "pservop1"
+    Location		    [224, 85, 896, 511]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "white"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Inport
+      Name		      "Inport"
+      Position		      [80, 110, 100, 130]
+      Port		      "1"
+      PortWidth		      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      SignalType	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "Power supply"
+      Position		      [155, 325, 175, 345]
+      Value		      "PS"
+    }
+    Block {
+      BlockType		      Switch
+      Name		      "Switch"
+      Position		      [355, 264, 380, 296]
+      Threshold		      "0"
+    }
+    Block {
+      BlockType		      Switch
+      Name		      "Switch1"
+      Position		      [350, 104, 375, 136]
+      Threshold		      "0"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "Volume2"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [410, 269, 440, 321]
+      ShowPortLabels	      off
+      System {
+	Name			"Volume2"
+	Location		[101, 418, 581, 718]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [40, 45, 60, 65]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [35, 150, 55, 170]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_3"
+	  Position		  [350, 205, 370, 225]
+	  Orientation		  "left"
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Area"
+	  Position		  [210, 182, 245, 208]
+	  Orientation		  "left"
+	  Gain			  "A2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn"
+	  Position		  [190, 110, 230, 130]
+	  Expr			  "1/u(1)"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [90, 39, 125, 71]
+	  Gain			  "R1*T1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [210, 51, 230, 79]
+	  Gain			  "k1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [265, 57, 290, 93]
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [270, 185, 295, 205]
+	  Orientation		  "left"
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [165, 45, 185, 85]
+	  IconShape		  "rectangular"
+	  Inputs		  "-+"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [150, 110, 170, 130]
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "area"
+	  Position		  [85, 147, 115, 173]
+	  Gain			  "A2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "pressure\nintegration"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [335, 65, 355, 85]
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "P20"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "volume"
+	  Position		  [75, 105, 95, 125]
+	  Value			  "V2"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [385, 65, 405, 85]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "in_3"
+	  SrcPort		  1
+	  Points		  [-15, 0; 0, -15]
+	  DstBlock		  "Product1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  DstBlock		  "area"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "volume"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "pressure\nintegration"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  DstBlock		  "Area"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "area"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Fcn"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -35]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Area"
+	  SrcPort		  1
+	  Points		  [-80, 0; 0, -120]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "pressure\nintegration"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "out_1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 115]
+	    DstBlock		    "Product1"
+	    DstPort		    1
+	  }
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "eq. of motion"
+      Ports		      [2, 2, 0, 0, 0]
+      Position		      [485, 133, 520, 217]
+      ShowPortLabels	      off
+      System {
+	Name			"eq. of motion"
+	Location		[238, 228, 994, 718]
+	Open			on
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [50, 45, 70, 65]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [50, 90, 70, 110]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Acc.\n integration"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [330, 115, 350, 135]
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "0"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Area"
+	  Position		  [100, 40, 130, 70]
+	  Gain			  "A1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Area2"
+	  Position		  [100, 86, 130, 114]
+	  Gain			  "A2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Atmosphaeric\nforce"
+	  Position		  [55, 211, 120, 229]
+	  Value			  "(A1-A2)*1e5"
+	}
+	Block {
+	  BlockType		  Relay
+	  Name			  "Dry friction"
+	  Position		  [65, 170, 90, 190]
+	  OnSwitchValue		  "0"
+	  OffSwitchValue	  "0"
+	  OnOutputValue		  "Fdry"
+	  OffOutputValue	  "-Fdry"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [270, 107, 310, 143]
+	  Gain			  "1/M"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "Limited velocity\nintegration"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [385, 104, 435, 146]
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "X0"
+	  LimitOutput		  on
+	  UpperSaturationLimit	  "0.245"
+	  LowerSaturationLimit	  "-0.245"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [6, 1, 0, 0, 0]
+	  Position		  [155, 62, 200, 203]
+	  IconShape		  "rectangular"
+	  Inputs		  "+----+"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "gravity"
+	  Position		  [195, 210, 225, 240]
+	  Orientation		  "left"
+	  Value			  "M*g"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "viscous\nfriction"
+	  Position		  [100, 127, 125, 153]
+	  Gain			  "B1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "position"
+	  Position		  [465, 115, 485, 135]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "velocity"
+	  Position		  [450, 175, 470, 195]
+	  Port			  "2"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  Points		  [15, -10]
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "gravity"
+	  SrcPort		  1
+	  Points		  [-45, 0]
+	  DstBlock		  "Sum"
+	  DstPort		  6
+	}
+	Line {
+	  SrcBlock		  "Atmosphaeric\nforce"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -25]
+	  DstBlock		  "Sum"
+	  DstPort		  5
+	}
+	Line {
+	  SrcBlock		  "Acc.\n integration"
+	  SrcPort		  1
+	  Points		  [0, 0]
+	  Branch {
+	    DstBlock		    "Limited velocity\nintegration"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [5, 25; 0, 35]
+	    Branch {
+	      DstBlock		      "velocity"
+	      DstPort		      1
+	    }
+	    Branch {
+	      Points		      [0, 80; -335, 0; 0, -85]
+	      Branch {
+		Points			[0, -40]
+		DstBlock		"viscous\nfriction"
+		DstPort			1
+	      }
+	      Branch {
+		DstBlock		"Dry friction"
+		DstPort			1
+	      }
+	    }
+	  }
+	}
+	Line {
+	  SrcBlock		  "Limited velocity\nintegration"
+	  SrcPort		  1
+	  DstBlock		  "position"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  DstBlock		  "Area2"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  DstBlock		  "Area"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Area"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Area2"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "viscous\nfriction"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -20]
+	  DstBlock		  "Sum"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Acc.\n integration"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Dry friction"
+	  SrcPort		  1
+	  Points		  [40, 0; 0, -35]
+	  DstBlock		  "Sum"
+	  DstPort		  4
+	}
+      }
+    }
+    Block {
+      BlockType		      Constant
+      Name		      "return\npressure"
+      Position		      [160, 185, 180, 205]
+      Value		      "PR"
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "valve1"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [290, 49, 320, 101]
+      ShowPortLabels	      off
+      System {
+	Name			"valve1"
+	Location		[305, 432, 975, 747]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [50, 40, 70, 60]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [50, 90, 70, 110]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_3"
+	  Position		  [55, 180, 75, 200]
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [440, 270, 460, 290]
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn"
+	  Position		  [185, 227, 240, 253]
+	  Expr			  "u(2)/u(1)"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn1"
+	  Position		  [290, 90, 465, 140]
+	  Expr			  "kkrit*sqrt(u(1)^(2/k1)-u(1)^((k1+1)/k1))"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [205, 44, 295, 86]
+	  Gain			  "rho1*kvalve"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [140, 165, 170, 200]
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [150, 55, 175, 75]
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [575, 90, 600, 110]
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [255, 165, 285, 185]
+	  Orientation		  "up"
+	  UpperLimit		  "1"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [440, 150, 460, 170]
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [500, 144, 525, 176]
+	  Threshold		  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "critical\npressure\ndrop"
+	  Position		  [370, 170, 400, 190]
+	  Value			  "zkrit"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [630, 90, 650, 110]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "in_3"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 10]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -110]
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Fcn1"
+	  SrcPort		  1
+	  Points		  [0, 35]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [250, 0; 0, 30]
+	  DstBlock		  "Product1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -55]
+	  DstBlock		  "Product1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [15, 0; 0, 75]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "critical\npressure\ndrop"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -15]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Fcn"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [80, 0; 0, -85]
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [0, -45]
+	  DstBlock		  "Fcn1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "valve2"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [290, 124, 320, 176]
+      ShowPortLabels	      off
+      System {
+	Name			"valve2"
+	Location		[46, 193, 716, 508]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [50, 40, 70, 60]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [50, 90, 70, 110]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_3"
+	  Position		  [55, 180, 75, 200]
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [440, 270, 460, 290]
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn"
+	  Position		  [185, 227, 240, 253]
+	  Expr			  "u(2)/u(1)"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn1"
+	  Position		  [290, 90, 465, 140]
+	  Expr			  "kkrit*sqrt(u(1)^(2/k1)-u(1)^((k1+1)/k1))"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [205, 44, 295, 86]
+	  Gain			  "rho1*kvalve"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [140, 165, 170, 200]
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [150, 55, 175, 75]
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [575, 90, 600, 110]
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [255, 165, 285, 185]
+	  Orientation		  "up"
+	  UpperLimit		  "1"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [440, 150, 460, 170]
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [500, 144, 525, 176]
+	  Threshold		  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "critical\npressure\ndrop"
+	  Position		  [370, 170, 400, 190]
+	  Value			  "zkrit"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [630, 90, 650, 110]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "in_3"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 10]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -110]
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Fcn1"
+	  SrcPort		  1
+	  Points		  [0, 35]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [250, 0; 0, 30]
+	  DstBlock		  "Product1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -55]
+	  DstBlock		  "Product1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [15, 0; 0, 75]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "critical\npressure\ndrop"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -15]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Fcn"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [80, 0; 0, -85]
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [0, -45]
+	  DstBlock		  "Fcn1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "valve3"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [290, 209, 320, 261]
+      ShowPortLabels	      off
+      System {
+	Name			"valve3"
+	Location		[195, 305, 865, 620]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [50, 40, 70, 60]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [50, 90, 70, 110]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_3"
+	  Position		  [55, 180, 75, 200]
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [440, 270, 460, 290]
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn"
+	  Position		  [185, 227, 240, 253]
+	  Expr			  "u(2)/u(1)"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn1"
+	  Position		  [290, 90, 465, 140]
+	  Expr			  "kkrit*sqrt(u(1)^(2/k1)-u(1)^((k1+1)/k1))"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [205, 44, 295, 86]
+	  Gain			  "rho1*kvalve"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [140, 165, 170, 200]
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [150, 55, 175, 75]
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [575, 90, 600, 110]
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [255, 165, 285, 185]
+	  Orientation		  "up"
+	  UpperLimit		  "1"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [440, 150, 460, 170]
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [500, 144, 525, 176]
+	  Threshold		  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "critical\npressure\ndrop"
+	  Position		  [370, 170, 400, 190]
+	  Value			  "zkrit"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [630, 90, 650, 110]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "in_3"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 10]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -110]
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Fcn1"
+	  SrcPort		  1
+	  Points		  [0, 35]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [250, 0; 0, 30]
+	  DstBlock		  "Product1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -55]
+	  DstBlock		  "Product1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [15, 0; 0, 75]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "critical\npressure\ndrop"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -15]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Fcn"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [80, 0; 0, -85]
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [0, -45]
+	  DstBlock		  "Fcn1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "valve4"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [290, 309, 320, 361]
+      ShowPortLabels	      off
+      System {
+	Name			"valve4"
+	Location		[46, 193, 716, 508]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [50, 40, 70, 60]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [50, 90, 70, 110]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_3"
+	  Position		  [55, 180, 75, 200]
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "Constant"
+	  Position		  [440, 270, 460, 290]
+	  Value			  "1"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn"
+	  Position		  [185, 227, 240, 253]
+	  Expr			  "u(2)/u(1)"
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn1"
+	  Position		  [290, 90, 465, 140]
+	  Expr			  "kkrit*sqrt(u(1)^(2/k1)-u(1)^((k1+1)/k1))"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [205, 44, 295, 86]
+	  Gain			  "rho1*kvalve"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Mux
+	  Name			  "Mux"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [140, 165, 170, 200]
+	  Inputs		  "2"
+	  DisplayOption		  "none"
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [150, 55, 175, 75]
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [575, 90, 600, 110]
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Saturate
+	  Name			  "Saturation"
+	  Position		  [255, 165, 285, 185]
+	  Orientation		  "up"
+	  UpperLimit		  "1"
+	  LowerLimit		  "0"
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [440, 150, 460, 170]
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Switch
+	  Name			  "Switch"
+	  Position		  [500, 144, 525, 176]
+	  Threshold		  "0"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "critical\npressure\ndrop"
+	  Position		  [370, 170, 400, 190]
+	  Value			  "zkrit"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [630, 90, 650, 110]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "in_3"
+	  SrcPort		  1
+	  DstBlock		  "Mux"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  DstBlock		  "out_1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  Points		  [15, 0; 0, 10]
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Mux"
+	  SrcPort		  1
+	  DstBlock		  "Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Constant"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -110]
+	  DstBlock		  "Switch"
+	  DstPort		  3
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Switch"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Fcn1"
+	  SrcPort		  1
+	  Points		  [0, 35]
+	  DstBlock		  "Switch"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  Points		  [250, 0; 0, 30]
+	  DstBlock		  "Product1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Switch"
+	  SrcPort		  1
+	  Points		  [20, 0; 0, -55]
+	  DstBlock		  "Product1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  Points		  [15, 0]
+	  Branch {
+	    Points		    [0, -30]
+	    DstBlock		    "Product"
+	    DstPort		    2
+	  }
+	  Branch {
+	    Points		    [15, 0; 0, 75]
+	    DstBlock		    "Mux"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "critical\npressure\ndrop"
+	  SrcPort		  1
+	  Points		  [5, 0; 0, -15]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Fcn"
+	  SrcPort		  1
+	  Points		  [25, 0]
+	  Branch {
+	    Points		    [80, 0; 0, -85]
+	    DstBlock		    "Sum"
+	    DstPort		    1
+	  }
+	  Branch {
+	    DstBlock		    "Saturation"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Saturation"
+	  SrcPort		  1
+	  Points		  [0, -45]
+	  DstBlock		  "Fcn1"
+	  DstPort		  1
+	}
+      }
+    }
+    Block {
+      BlockType		      SubSystem
+      Name		      "volume1"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [410, 109, 440, 161]
+      ShowPortLabels	      off
+      System {
+	Name			"volume1"
+	Location		[13, 77, 495, 379]
+	Open			off
+	ModelBrowserVisibility	off
+	ModelBrowserWidth	200
+	ScreenColor		"white"
+	PaperOrientation	"landscape"
+	PaperPositionMode	"auto"
+	PaperType		"usletter"
+	PaperUnits		"inches"
+	ZoomFactor		"100"
+	AutoZoom		on
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_1"
+	  Position		  [40, 45, 60, 65]
+	  Port			  "1"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_2"
+	  Position		  [35, 150, 55, 170]
+	  Port			  "2"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "in_3"
+	  Position		  [325, 205, 345, 225]
+	  Orientation		  "left"
+	  Port			  "3"
+	  PortWidth		  "-1"
+	  SampleTime		  "-1"
+	  DataType		  "auto"
+	  SignalType		  "auto"
+	  Interpolate		  on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Area"
+	  Position		  [210, 182, 245, 208]
+	  Orientation		  "left"
+	  Gain			  "A1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Fcn
+	  Name			  "Fcn"
+	  Position		  [190, 110, 230, 130]
+	  Expr			  "1/u(1)"
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain"
+	  Position		  [90, 39, 125, 71]
+	  Gain			  "R1*T1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "Gain1"
+	  Position		  [210, 51, 230, 79]
+	  Gain			  "k1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [265, 57, 290, 93]
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Product
+	  Name			  "Product1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [270, 185, 295, 205]
+	  Orientation		  "left"
+	  Inputs		  "2"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [165, 45, 185, 85]
+	  IconShape		  "rectangular"
+	  Inputs		  "+-"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Sum
+	  Name			  "Sum1"
+	  Ports			  [2, 1, 0, 0, 0]
+	  Position		  [150, 110, 170, 130]
+	  IconShape		  "rectangular"
+	  Inputs		  "++"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Gain
+	  Name			  "area"
+	  Position		  [85, 147, 115, 173]
+	  Gain			  "A1"
+	  SaturateOnIntegerOverflow on
+	}
+	Block {
+	  BlockType		  Integrator
+	  Name			  "pressure\nintegration"
+	  Ports			  [1, 1, 0, 0, 0]
+	  Position		  [335, 65, 355, 85]
+	  ExternalReset		  "none"
+	  InitialConditionSource  "internal"
+	  InitialCondition	  "P10"
+	  LimitOutput		  off
+	  UpperSaturationLimit	  "inf"
+	  LowerSaturationLimit	  "-inf"
+	  ShowSaturationPort	  off
+	  ShowStatePort		  off
+	  AbsoluteTolerance	  "auto"
+	}
+	Block {
+	  BlockType		  Constant
+	  Name			  "volume"
+	  Position		  [75, 105, 95, 125]
+	  Value			  "V1"
+	}
+	Block {
+	  BlockType		  Outport
+	  Name			  "out_1"
+	  Position		  [400, 65, 420, 85]
+	  Port			  "1"
+	  OutputWhenDisabled	  "held"
+	  InitialOutput		  "[]"
+	}
+	Line {
+	  SrcBlock		  "pressure\nintegration"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  Branch {
+	    DstBlock		    "out_1"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 115]
+	    DstBlock		    "Product1"
+	    DstPort		    1
+	  }
+	}
+	Line {
+	  SrcBlock		  "Area"
+	  SrcPort		  1
+	  Points		  [-80, 0; 0, -120]
+	  DstBlock		  "Sum"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Fcn"
+	  SrcPort		  1
+	  Points		  [10, 0; 0, -35]
+	  DstBlock		  "Product"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum1"
+	  SrcPort		  1
+	  DstBlock		  "Fcn"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "area"
+	  SrcPort		  1
+	  Points		  [20, 0]
+	  DstBlock		  "Sum1"
+	  DstPort		  2
+	}
+	Line {
+	  SrcBlock		  "Sum"
+	  SrcPort		  1
+	  DstBlock		  "Gain1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product1"
+	  SrcPort		  1
+	  DstBlock		  "Area"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Product"
+	  SrcPort		  1
+	  DstBlock		  "pressure\nintegration"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain1"
+	  SrcPort		  1
+	  DstBlock		  "Product"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "volume"
+	  SrcPort		  1
+	  DstBlock		  "Sum1"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "Gain"
+	  SrcPort		  1
+	  DstBlock		  "Sum"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_1"
+	  SrcPort		  1
+	  DstBlock		  "Gain"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_2"
+	  SrcPort		  1
+	  DstBlock		  "area"
+	  DstPort		  1
+	}
+	Line {
+	  SrcBlock		  "in_3"
+	  SrcPort		  1
+	  Points		  [-5, 0; 0, -15]
+	  DstBlock		  "Product1"
+	  DstPort		  2
+	}
+      }
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "Outport"
+      Position		      [580, 145, 600, 165]
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Line {
+      SrcBlock		      "valve3"
+      SrcPort		      1
+      Points		      [10, 0; 0, 35]
+      DstBlock		      "Switch"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "valve1"
+      SrcPort		      1
+      Points		      [0, 35]
+      DstBlock		      "Switch1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Power supply"
+      SrcPort		      1
+      Points		      [75, 0]
+      Branch {
+	DstBlock		"valve4"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, -260]
+	DstBlock		"valve1"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Inport"
+      SrcPort		      1
+      Points		      [130, 0]
+      Branch {
+	DstBlock		"Switch1"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 15]
+	Branch {
+	  Points		  [0, 85]
+	  Branch {
+	    Points		    [0, 60]
+	    Branch {
+	      Points		      [0, 40]
+	      DstBlock		      "valve4"
+	      DstPort		      1
+	    }
+	    Branch {
+	      DstBlock		      "Switch"
+	      DstPort		      2
+	    }
+	  }
+	  Branch {
+	    DstBlock		    "valve3"
+	    DstPort		    1
+	  }
+	}
+	Branch {
+	  DstBlock		  "valve2"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[0, -60]
+	DstBlock		"valve1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "valve2"
+      SrcPort		      1
+      Points		      [5, 0; 0, -20]
+      DstBlock		      "Switch1"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "valve4"
+      SrcPort		      1
+      Points		      [15, 0]
+      DstBlock		      "Switch"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "return\npressure"
+      SrcPort		      1
+      Points		      [80, 0]
+      Branch {
+	Points			[0, -30]
+	DstBlock		"valve2"
+	DstPort			3
+      }
+      Branch {
+	Points			[0, 55]
+	DstBlock		"valve3"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "volume1"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	Points			[0, 20]
+	DstBlock		"eq. of motion"
+	DstPort			1
+      }
+      Branch {
+	Points			[-10, 0; 0, 55; -185, 0; 0, -40]
+	Branch {
+	  DstBlock		  "valve2"
+	  DstPort		  2
+	}
+	Branch {
+	  Points		  [0, -60]
+	  DstBlock		  "valve1"
+	  DstPort		  3
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "Switch1"
+      SrcPort		      1
+      DstBlock		      "volume1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Switch"
+      SrcPort		      1
+      DstBlock		      "Volume2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "eq. of motion"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"Outport"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -85; -150, 0; 0, 65]
+	Branch {
+	  Points		  [0, 160]
+	  DstBlock		  "Volume2"
+	  DstPort		  2
+	}
+	Branch {
+	  DstBlock		  "volume1"
+	  DstPort		  2
+	}
+      }
+    }
+    Line {
+      SrcBlock		      "eq. of motion"
+      SrcPort		      2
+      Points		      [15, 0; 0, 150; -150, 0; 0, -35]
+      Branch {
+	Points			[0, -160]
+	DstBlock		"volume1"
+	DstPort			3
+      }
+      Branch {
+	DstBlock		"Volume2"
+	DstPort			3
+      }
+    }
+    Line {
+      SrcBlock		      "Volume2"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[0, -100]
+	DstBlock		"eq. of motion"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 90; -195, 0; 0, -35]
+	Branch {
+	  Points		  [0, -115]
+	  DstBlock		  "valve3"
+	  DstPort		  2
+	}
+	Branch {
+	  DstBlock		  "valve4"
+	  DstPort		  3
+	}
+      }
+    }
+  }
+}

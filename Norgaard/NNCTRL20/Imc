@@ -1,0 +1,82 @@
+                   -----------------------------------------------
+                      
+                   OVERVIEW OF FILES ASSOCIATED WITH SIMULATION OF
+                             INTERNAL MODEL CONTROL
+                   
+                   -----------------------------------------------
+                    
+MATLAB tools for simulating neural network based internal model control (IMC).
+
+
+                                 --OO--
+                                  
+
+DESCRIPTION                             
+Assume that a process has been modelled by a neural network:
+     ^      ^
+     y(t) = f(y(t-1),...,y(t-n),u(t-1),...,u(t-m))
+     
+and that the inverse exists and has been modelled by another network:
+
+     ^      ^ -1
+     u(t) = f   (y(t+1),y(t),...,y(t-n+1),u(t-1),...,u(t-m+1))
+
+
+If network weights and architecture definitions for these two networks have
+been saved in mat-files, 'imccon' can be used for simulation of
+internal model control of the process under consideration. The
+"process" can be a SIMULINK model or a model described by a set of differential
+equations specified in a MATLAB-function. If the training data has been
+obtained from a "real world" experiment (i.e., a MATLAB/SIMULINK model is not
+available) model is not available the closed-loop system can also be
+simulated by using the network model for simulating the process.
+
+The model of the process can be generated with the 'nnarx' function from the
+NNSYSID toolbox. In order to train an inverse model, one of the functions
+'general', 'special1', or 'special2' can be applied.
+
+
+                                --OO--
+
+                                 
+FILE OVERVIEW:
+Imc      - This file.
+imccon   - Program for simulating internal model control.
+imcinit  - File containing design parameters for 'imccon'.
+
+
+The following functions must be available as well:
+the NNSYSID toolbox
+shift, siggener - Functions used by imccon
+
+
+                                --OO--
+                                 
+                                 
+SUGGESTED WORKING PROCEDURE FOR TESTING THE CONCEPT ON A KNOWN PROCESS
+
+1: BUILD THE PROCESS
+Build the process in SIMULINK or write the differential equations in a
+MATLAB-function. If SIMULINK is used, specify input to and output from the
+model by an inport and an outport, respectively. If SIMULINK is not available, 
+write the differential equations in a MATLAB-function in the format required
+by the ODE45 differential equation solver.
+
+2: MAKE AN EXPERIMENT
+Use 'experim' for generating a data set to be used for identifying neural
+network models.
+
+3. IDENTIFY A "FORWARD" MODEL OF THE PROCESS
+Train a model of the process to be controlled using the 'nnarx' function found
+in the NNSYSID toolbox. 
+
+4: IDENTIFY AN INVERSE MODEL
+The inverse model can be identified with generalized or specialized training
+by following the guidelines given in the text file 'Inverse'. 
+
+5: SIMULATION OF CLOSED-LOOP SYSTEM
+The closed-loop system is simulated with the program 'imccon'. The design
+parameters necessary for running this program must be defined in the file
+'imcinit'. For example, the user must specify the name of the MATLAB/SIMULINK
+model, sampling period, reference signal, and the names of the files
+containing architecture and weights of forward and inverse model networks.

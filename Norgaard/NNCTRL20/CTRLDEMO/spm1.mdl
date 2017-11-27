@@ -1,0 +1,303 @@
+Model {
+  Name			  "spm1"
+  Version		  3.00
+  SimParamPage		  "Solver"
+  SampleTimeColors	  off
+  InvariantConstants	  off
+  WideVectorLines	  off
+  ShowLineWidths	  off
+  ShowPortDataTypes	  off
+  StartTime		  "0.0"
+  StopTime		  "999999"
+  SolverMode		  "SingleTasking"
+  Solver		  "ode45"
+  RelTol		  "1e-3"
+  AbsTol		  "1e-6"
+  Refine		  "1"
+  MaxStep		  "10"
+  InitialStep		  "auto"
+  FixedStep		  "auto"
+  MaxOrder		  5
+  OutputOption		  "RefineOutputTimes"
+  OutputTimes		  "[]"
+  LoadExternalInput	  off
+  ExternalInput		  "[t, u]"
+  SaveTime		  off
+  TimeSaveName		  "tout"
+  SaveState		  off
+  StateSaveName		  "xout"
+  SaveOutput		  off
+  OutputSaveName	  "yout"
+  LoadInitialState	  off
+  InitialState		  "xInitial"
+  SaveFinalState	  off
+  FinalStateName	  "xFinal"
+  SaveFormat		  "Matrix"
+  LimitMaxRows		  off
+  MaxRows		  "1000"
+  Decimation		  "1"
+  AlgebraicLoopMsg	  "warning"
+  MinStepSizeMsg	  "warning"
+  UnconnectedInputMsg	  "warning"
+  UnconnectedOutputMsg	  "warning"
+  UnconnectedLineMsg	  "warning"
+  InheritedTsInSrcMsg	  "warning"
+  IntegerOverflowMsg	  "warning"
+  UnnecessaryDatatypeConvMsg "none"
+  Int32ToFloatConvMsg	  "warning"
+  SignalLabelMismatchMsg  "none"
+  ConsistencyChecking	  "off"
+  ZeroCross		  on
+  SimulationMode	  "normal"
+  BlockDataTips		  on
+  BlockParametersDataTip  on
+  BlockAttributesDataTip  off
+  BlockPortWidthsDataTip  off
+  BlockDescriptionStringDataTip	off
+  BlockMaskParametersDataTip off
+  ToolBar		  off
+  StatusBar		  off
+  BrowserShowLibraryLinks off
+  BrowserLookUnderMasks	  off
+  OptimizeBlockIOStorage  on
+  BufferReuse		  on
+  BooleanDataType	  off
+  RTWSystemTargetFile	  "grt.tlc"
+  RTWInlineParameters	  off
+  RTWRetainRTWFile	  off
+  RTWTemplateMakefile	  "grt_default_tmf"
+  RTWMakeCommand	  "make_rtw"
+  RTWGenerateCodeOnly	  off
+  ExtModeMexFile	  "ext_comm"
+  ExtModeBatchMode	  off
+  ExtModeTrigType	  "manual"
+  ExtModeTrigMode	  "oneshot"
+  ExtModeTrigPort	  "1"
+  ExtModeTrigElement	  "any"
+  ExtModeTrigDuration	  1000
+  ExtModeTrigHoldOff	  0
+  ExtModeTrigDelay	  0
+  ExtModeTrigDirection	  "rising"
+  ExtModeTrigLevel	  0
+  ExtModeArchiveMode	  "off"
+  ExtModeAutoIncOneShot	  off
+  ExtModeIncDirWhenArm	  off
+  ExtModeAddSuffixToVar	  off
+  ExtModeWriteAllDataToWs off
+  ExtModeArmWhenConnect	  off
+  Created		  "Mon Jan 24 22:01:34 2000"
+  UpdateHistory		  "UpdateHistoryNever"
+  ModifiedByFormat	  "%<Auto>"
+  ModifiedDateFormat	  "%<Auto>"
+  LastModifiedDate	  "Mon Jan 24 22:02:39 2000"
+  ModelVersionFormat	  "1.%<AutoIncrement:1>"
+  ConfigurationManager	  "none"
+  BlockDefaults {
+    Orientation		    "right"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    NamePlacement	    "normal"
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+    ShowName		    on
+  }
+  AnnotationDefaults {
+    HorizontalAlignment	    "center"
+    VerticalAlignment	    "middle"
+    ForegroundColor	    "black"
+    BackgroundColor	    "white"
+    DropShadow		    off
+    FontName		    "Helvetica"
+    FontSize		    10
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  LineDefaults {
+    FontName		    "Helvetica"
+    FontSize		    9
+    FontWeight		    "normal"
+    FontAngle		    "normal"
+  }
+  System {
+    Name		    "spm1"
+    Location		    [313, 232, 813, 532]
+    Open		    on
+    ModelBrowserVisibility  off
+    ModelBrowserWidth	    200
+    ScreenColor		    "yellow"
+    PaperOrientation	    "landscape"
+    PaperPositionMode	    "auto"
+    PaperType		    "usletter"
+    PaperUnits		    "inches"
+    ZoomFactor		    "100"
+    AutoZoom		    on
+    ReportName		    "simulink-default.rpt"
+    Block {
+      BlockType		      Inport
+      Name		      "Inport"
+      Position		      [35, 70, 55, 90]
+      BackgroundColor	      "blue"
+      Port		      "1"
+      PortWidth		      "-1"
+      SampleTime	      "-1"
+      DataType		      "auto"
+      SignalType	      "auto"
+      Interpolate	      on
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator1"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [195, 77, 225, 113]
+      BackgroundColor	      "green"
+      DropShadow	      on
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+    }
+    Block {
+      BlockType		      Integrator
+      Name		      "Integrator2"
+      Ports		      [1, 1, 0, 0, 0]
+      Position		      [285, 78, 315, 112]
+      BackgroundColor	      "green"
+      DropShadow	      on
+      ExternalReset	      "none"
+      InitialConditionSource  "internal"
+      InitialCondition	      "0"
+      LimitOutput	      off
+      UpperSaturationLimit    "inf"
+      LowerSaturationLimit    "-inf"
+      ShowSaturationPort      off
+      ShowStatePort	      off
+      AbsoluteTolerance	      "auto"
+    }
+    Block {
+      BlockType		      Product
+      Name		      "Product"
+      Ports		      [3, 1, 0, 0, 0]
+      Position		      [250, 167, 280, 203]
+      Orientation	      "left"
+      BackgroundColor	      "green"
+      DropShadow	      on
+      Inputs		      "3"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Sum
+      Name		      "Sum"
+      Ports		      [4, 1, 0, 0, 0]
+      Position		      [140, 72, 160, 118]
+      BackgroundColor	      "green"
+      DropShadow	      on
+      IconShape		      "rectangular"
+      Inputs		      "+---"
+      SaturateOnIntegerOverflow	on
+    }
+    Block {
+      BlockType		      Outport
+      Name		      "Outport"
+      Position		      [395, 85, 415, 105]
+      BackgroundColor	      "blue"
+      Port		      "1"
+      OutputWhenDisabled      "held"
+      InitialOutput	      "[]"
+    }
+    Line {
+      SrcBlock		      "Sum"
+      SrcPort		      1
+      DstBlock		      "Integrator1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Product"
+      SrcPort		      1
+      Points		      [-155, 0; 0, -95]
+      DstBlock		      "Sum"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "Integrator1"
+      SrcPort		      1
+      Points		      [20, 0]
+      Branch {
+	Points			[0, 50; -135, 0; 0, -35]
+	DstBlock		"Sum"
+	DstPort			4
+      }
+      Branch {
+	DstBlock		"Integrator2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Integrator2"
+      SrcPort		      1
+      Points		      [30, 0]
+      Branch {
+	Points			[0, 55]
+	Branch {
+	  Points		  [0, 25]
+	  Branch {
+	    DstBlock		    "Product"
+	    DstPort		    1
+	  }
+	  Branch {
+	    Points		    [0, 10]
+	    Branch {
+	      DstBlock		      "Product"
+	      DstPort		      2
+	    }
+	    Branch {
+	      Points		      [0, 10]
+	      DstBlock		      "Product"
+	      DstPort		      3
+	    }
+	  }
+	}
+	Branch {
+	  Points		  [-250, 0; 0, -50]
+	  DstBlock		  "Sum"
+	  DstPort		  3
+	}
+      }
+      Branch {
+	DstBlock		"Outport"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Inport"
+      SrcPort		      1
+      DstBlock		      "Sum"
+      DstPort		      1
+    }
+    Annotation {
+      Position		      [177, 57]
+      VerticalAlignment	      "top"
+      BackgroundColor	      "yellow"
+      Text		      ".\nx2"
+    }
+    Annotation {
+      Position		      [352, 72]
+      VerticalAlignment	      "top"
+      BackgroundColor	      "yellow"
+      Text		      "y=x1"
+    }
+    Annotation {
+      Position		      [257, 57]
+      VerticalAlignment	      "top"
+      BackgroundColor	      "yellow"
+      Text		      "      .\nx2=x1"
+    }
+  }
+}

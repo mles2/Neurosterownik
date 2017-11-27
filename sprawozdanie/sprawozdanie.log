@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.16)  26 NOV 2017 23:14
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017) (preloaded format=pdflatex 2017.10.16)  27 NOV 2017 20:50
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -461,6 +461,13 @@ LaTeX Font Info:    Redeclaring font encoding OMS on input line 713.
 \mathdisplay@stack=\toks21
 LaTeX Info: Redefining \[ on input line 2817.
 LaTeX Info: Redefining \] on input line 2818.
+) (/usr/local/texlive/2017/texmf-dist/tex/latex/float/float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count100
+\float@exts=\toks22
+\float@box=\box28
+\@float@everytoks=\toks23
+\@floatcapt=\box29
 ) (./sprawozdanie.aux
 
 LaTeX Warning: Label `springer' multiply defined.
@@ -468,33 +475,33 @@ LaTeX Warning: Label `springer' multiply defined.
 )
 \openout1 = `sprawozdanie.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
-LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 16.
-LaTeX Font Info:    ... okay on input line 16.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
+LaTeX Font Info:    Checking defaults for OT4/cmr/m/n on input line 18.
+LaTeX Font Info:    ... okay on input line 18.
  (/usr/local/texlive/2017/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count100
+\scratchcounter=\count101
 \scratchdimen=\dimen114
-\scratchbox=\box28
-\nofMPsegments=\count101
-\nofMParguments=\count102
-\everyMPshowfont=\toks22
-\MPscratchCnt=\count103
+\scratchbox=\box30
+\nofMPsegments=\count102
+\nofMParguments=\count103
+\everyMPshowfont=\toks24
+\MPscratchCnt=\count104
 \MPscratchDim=\dimen115
-\MPnumerator=\count104
-\makeMPintoPDFobject=\count105
-\everyMPtoPDFconversion=\toks23
+\MPnumerator=\count105
+\makeMPintoPDFobject=\count106
+\everyMPtoPDFconversion=\toks25
 ) (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/pdftexcmds.sty
 Package: pdftexcmds 2017/03/19 v0.25 Utility functions of pdfTeX for LuaTeX (HO)
  (/usr/local/texlive/2017/texmf-dist/tex/generic/oberdiek/ifluatex.sty
@@ -533,73 +540,134 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Live
 )) <logo_pol_wroclaw.png, id=1, 235.88126pt x 235.88126pt>
 File: logo_pol_wroclaw.png Graphic file (type png)
  <use logo_pol_wroclaw.png>
-Package pdftex.def Info: logo_pol_wroclaw.png used on input line 20.
+Package pdftex.def Info: logo_pol_wroclaw.png used on input line 22.
 (pdftex.def)             Requested size: 86.25pt x 86.2489pt.
  [1
 
 {/usr/local/texlive/2017/texmf-var/fonts/map/pdftex/updmap/pdftex.map} <./logo_pol_wroclaw.png>]
-LaTeX Font Info:    Try loading font information for OML+plm on input line 49.
+LaTeX Font Info:    Try loading font information for OML+plm on input line 51.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/polski/omlplm.fd
 File: omlplm.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMS+plsy on input line 49.
+LaTeX Font Info:    Try loading font information for OMS+plsy on input line 51.
 
 (/usr/local/texlive/2017/texmf-dist/tex/latex/polski/omsplsy.fd
 File: omsplsy.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-LaTeX Font Info:    Try loading font information for OMX+plex on input line 49.
+LaTeX Font Info:    Try loading font information for OMX+plex on input line 51.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/polski/omxplex.fd
 File: omxplex.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <10> on input line 49.
+(Font)              <10> on input line 51.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <7> on input line 49.
+(Font)              <7> on input line 51.
 LaTeX Font Info:    External font `plex10' loaded for size
-(Font)              <5> on input line 49.
+(Font)              <5> on input line 51.
  [1] <ident.jpg, id=20, 643.40375pt x 522.95375pt>
 File: ident.jpg Graphic file (type jpg)
  <use ident.jpg>
-Package pdftex.def Info: ident.jpg used on input line 91.
+Package pdftex.def Info: ident.jpg used on input line 93.
 (pdftex.def)             Requested size: 310.4979pt x 252.37946pt.
  [2 <./ident.jpg>] <ident2.jpg, id=26, 711.65875pt x 453.695pt>
 File: ident2.jpg Graphic file (type jpg)
  <use ident2.jpg>
-Package pdftex.def Info: ident2.jpg used on input line 106.
+Package pdftex.def Info: ident2.jpg used on input line 108.
 (pdftex.def)             Requested size: 310.4979pt x 197.94417pt.
 
-Overfull \hbox (4.83275pt too wide) in paragraph at lines 111--112
+Overfull \hbox (4.83275pt too wide) in paragraph at lines 113--114
 []\OT4/cmr/m/n/10 W trak-cie iden-ty-fi-ka-cji sie¢ neu-ro-no-wa jest zwy-kle wª¡-cza-na spo-sób szeregowo-
  []
 
-[3 <./ident2.jpg>] [4]
-LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 163.
+[3 <./ident2.jpg>] <data.jpg, id=31, 562.1pt x 421.575pt>
+File: data.jpg Graphic file (type jpg)
+ <use data.jpg>
+Package pdftex.def Info: data.jpg used on input line 134.
+(pdftex.def)             Requested size: 241.49895pt x 181.12575pt.
+ [4 <./data.jpg>] <errors.png, id=35, 383.4325pt x 209.78375pt>
+File: errors.png Graphic file (type png)
+ <use errors.png>
+Package pdftex.def Info: errors.png used on input line 162.
+(pdftex.def)             Requested size: 207.0021pt x 113.25592pt.
+ <25_epoches.jpg, id=36, 562.1pt x 421.575pt>
+File: 25_epoches.jpg Graphic file (type jpg)
+ <use 25_epoches.jpg>
+Package pdftex.def Info: 25_epoches.jpg used on input line 169.
+(pdftex.def)             Requested size: 207.0021pt x 155.24696pt.
+ [5 <./errors.png> <./25_epoches.jpg>] <25.jpg, id=41, 562.1pt x 421.575pt>
+File: 25.jpg Graphic file (type jpg)
+ <use 25.jpg>
+Package pdftex.def Info: 25.jpg used on input line 188.
+(pdftex.def)             Requested size: 345.0pt x 258.74924pt.
+ [6 <./25.jpg>] <open.png, id=46, 594.22pt x 186.6975pt>
+File: open.png Graphic file (type png)
+ <use open.png>
+Package pdftex.def Info: open.png used on input line 209.
+(pdftex.def)             Requested size: 345.0pt x 108.39856pt.
+ <closed.png, id=47, 579.16376pt x 207.77625pt>
+File: closed.png Graphic file (type png)
+ <use closed.png>
+Package pdftex.def Info: closed.png used on input line 219.
+(pdftex.def)             Requested size: 345.0pt x 123.76947pt.
+ [7 <./open.png> <./closed.png>] <5_one_step_ahead.jpg, id=53, 562.1pt x 421.575pt>
+File: 5_one_step_ahead.jpg Graphic file (type jpg)
+ <use 5_one_step_ahead.jpg>
+Package pdftex.def Info: 5_one_step_ahead.jpg used on input line 241.
+(pdftex.def)             Requested size: 276.00105pt x 206.99811pt.
+ <5_simulation.jpg, id=54, 562.1pt x 421.575pt>
+File: 5_simulation.jpg Graphic file (type jpg)
+ <use 5_simulation.jpg>
+Package pdftex.def Info: 5_simulation.jpg used on input line 248.
+(pdftex.def)             Requested size: 258.75pt x 194.06194pt.
+ [8 <./5_one_step_ahead.jpg> <./5_simulation.jpg>] <10_one_step_ahead.jpg, id=58, 562.1pt x 421.575pt>
+File: 10_one_step_ahead.jpg Graphic file (type jpg)
+ <use 10_one_step_ahead.jpg>
+Package pdftex.def Info: 10_one_step_ahead.jpg used on input line 263.
+(pdftex.def)             Requested size: 276.00105pt x 206.99811pt.
+ <10_simulation.jpg, id=59, 562.1pt x 421.575pt>
+File: 10_simulation.jpg Graphic file (type jpg)
+ <use 10_simulation.jpg>
+Package pdftex.def Info: 10_simulation.jpg used on input line 269.
+(pdftex.def)             Requested size: 258.75pt x 194.06194pt.
+ [9 <./10_one_step_ahead.jpg> <./10_simulation.jpg>] <100_one_step_ahead.jpg, id=63, 562.1pt x 421.575pt>
+File: 100_one_step_ahead.jpg Graphic file (type jpg)
+ <use 100_one_step_ahead.jpg>
+Package pdftex.def Info: 100_one_step_ahead.jpg used on input line 283.
+(pdftex.def)             Requested size: 276.00105pt x 206.99811pt.
+
+<100_simulation.jpg, id=64, 562.1pt x 421.575pt>
+File: 100_simulation.jpg Graphic file (type jpg)
+ <use 100_simulation.jpg>
+Package pdftex.def Info: 100_simulation.jpg used on input line 289.
+(pdftex.def)             Requested size: 258.75pt x 194.06194pt.
+ [10 <./100_one_step_ahead.jpg> <./100_simulation.jpg>] [11]
+LaTeX Font Info:    Try loading font information for OT4+cmtt on input line 339.
  (/usr/local/texlive/2017/texmf-dist/tex/latex/polski/ot4cmtt.fd
 File: ot4cmtt.fd 2008/02/24 v1.2.1 Font defs for fonts PL (MW)
 )
-Overfull \hbox (27.55247pt too wide) in paragraph at lines 162--164
+Overfull \hbox (27.55247pt too wide) in paragraph at lines 338--340
 \OT4/cmtt/m/n/10 http://staff.iiar.pwr.wroc.pl/piotr.ciskowski/skrypt/SNwMATLABie.htm 
  []
 
-[5] (./sprawozdanie.aux)
+[12] (./sprawozdanie.aux)
 
 LaTeX Warning: There were multiply-defined labels.
 
  ) 
 Here is how much of TeX's memory you used:
- 2747 strings out of 492995
- 35863 string characters out of 6132703
- 100916 words of memory out of 5000000
- 6239 multiletter control sequences out of 15000+600000
+ 2880 strings out of 492995
+ 37932 string characters out of 6132703
+ 102419 words of memory out of 5000000
+ 6356 multiletter control sequences out of 15000+600000
  14735 words of font info for 39 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 39i,9n,25p,802b,231s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 39i,9n,25p,801b,234s stack positions out of 5000i,500n,10000p,200000b,80000s
 {/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/pltt.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plit.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plms.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plmi.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plrm.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plme.enc}{/usr/local/texlive/2017/texmf-dist/fonts/enc/dvips/pl/plsc.enc}</usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plbx10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plbx12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plcsc10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plex10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plmi10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plmi7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plr10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plr12.pfb>
 </usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plsy10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plsy7.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plti10.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/plti12.pfb></usr/local/texlive/2017/texmf-dist/fonts/type1/public/pl/pltt10.pfb>
-Output written on sprawozdanie.pdf (6 pages, 165993 bytes).
+Output written on sprawozdanie.pdf (13 pages, 478177 bytes).
 PDF statistics:
- 87 PDF objects out of 1000 (max. 8388607)
- 61 compressed objects within 1 object stream
+ 126 PDF objects out of 1000 (max. 8388607)
+ 78 compressed objects within 1 object stream
  0 named destinations out of 1000 (max. 500000)
- 16 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 76 words of extra memory for PDF output out of 10000 (max. 10000000)
 
